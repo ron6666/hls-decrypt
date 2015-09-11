@@ -91,9 +91,11 @@ app.get('/', function(req, res) {
           }
 
           if (line.indexOf('#EXT-X-KEY:METHOD=AES-128') === 0) {
-            var parsed = line.match(/URI="([^"]+)"(?:,IV=(.+))?$/)
-            key = parsed[1]
-            if (parsed[2]) iv = parsed[2].slice(2).toLowerCase()
+            var parsed = line.match(/IV=(.+)(?:,URI="([^"]+)")?$/)
+            key = parsed[2]
+             log('key : '+key)
+            if (parsed[1]) iv = parsed[1].slice(2).toLowerCase()
+             log('iv : '+iv)
             return null
           }
 
