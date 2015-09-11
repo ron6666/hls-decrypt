@@ -3,7 +3,7 @@
 hls proxy that will decrypt segment files of another hls playlist
 
 ```
-npm install -g hls-decryptor
+npm install -g hls-decrypt
 ```
 
 ## Usage
